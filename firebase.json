@@ -1,6 +1,6 @@
 {
   "hosting": {
-    "public": "dist/ckd-gem/browser",
+    "public": "dist/cdk-gem/browser",
     "ignore": [
       "firebase.json",
       "**/.*",
