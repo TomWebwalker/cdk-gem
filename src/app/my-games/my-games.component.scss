@@ -1,0 +1,26 @@
+.game-item {
+  @apply px-3 py-2 cursor-grab;
+  &.rank-game:first-of-type {
+    @apply border border-y-amber-400 bg-amber-400 rounded-t;
+  }
+
+  &.rank-game:nth-child(2) {
+    @apply border border-b-gray-400 bg-gray-400;
+  }
+
+  &.rank-game:nth-child(3) {
+    @apply border border-amber-950 bg-amber-950 text-white;
+  }
+
+  &.cdk-drag-preview {
+    @apply bg-blue-300 text-black rounded border-none;
+  }
+}
+
+.cdk-drop-list-receiving {
+  @apply border-dashed border-4 border-blue-500 min-h-10;
+}
+
+.games-list {
+  @apply rounded border bg-white border-solid w-full;
+}

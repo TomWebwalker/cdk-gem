@@ -1,0 +1,33 @@
+<div class="h-full flex flex-col">
+
+  <h2 class="text-4xl text-center py-2">My games ranking</h2>
+  <div class="flex-1 flex items-center justify-center gap-8" cdkDropListGroup>
+    <div class="w-1/4">
+      <h4 class="mb-2 text-white">My ranking</h4>
+      <div cdkDropList [cdkDropListData]="games" class="games-list" (cdkDropListDropped)="drop($event)">
+        @for (game of games; track game; let idx = $index) {
+          <div class="game-item rank-game" cdkDrag>{{ idx + 1 }}. {{ game }}</div>
+        }
+      </div>
+    </div>
+
+    <div class="w-1/4">
+      <h4 class="mb-2 text-white">Games in progress</h4>
+      <div cdkDropList [cdkDropListData]="gamesInProgress" class="games-list" (cdkDropListDropped)="drop($event)">
+        @for (game of gamesInProgress; track game; ) {
+          <div class="game-item" cdkDrag>{{ game }}</div>
+        }
+      </div>
+    </div>
+
+    <div class="w-1/4">
+      <h4 class="mb-2 text-white">Games to play</h4>
+      <div cdkDropList [cdkDropListData]="gamesToPlay" class="games-list" (cdkDropListDropped)="drop($event)">
+        @for (game of gamesToPlay; track game; ) {
+          <div class="game-item" cdkDrag>{{ game }}</div>
+        }
+      </div>
+    </div>
+
+  </div>
+</div>

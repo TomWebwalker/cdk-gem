@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import '@angular/cdk/overlay-prebuilt.css';
+
+
+html, body {
+  @apply h-full bg-gradient-to-r from-cyan-500 to-blue-500
+}
+
+@layer components {
+  .home-link {
+    @apply bg-white px-8 py-4 rounded-lg shadow-md text-7xl hover:shadow-2xl hover:scale-105 transition-transform duration-300 ease-in-out text-center;
+  }
+}
+
+/* Animate items as they're being sorted. */
+.cdk-drop-list-dragging .cdk-drag {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+/* Animate an item that has been dropped. */
+.cdk-drag-animating {
+  transition: transform 300ms cubic-bezier(0, 0, 0.2, 1);
+}

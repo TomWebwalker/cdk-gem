@@ -1,0 +1,19 @@
+<div class="h-full flex flex-col">
+  <h2 class="text-4xl text-center py-2">My attendance list</h2>
+
+  <div class="flex-1 flex items-center justify-center">
+    <div class="w-1/3 flex flex-col gap-4">
+      <div class="rounded bg-white text-right px-4 py-2">Present: {{ selection.selected.length }}</div>
+      @for (attendee of attendees; track attendee; let idx = $index) {
+        <div class="attendee-line rounded w-full bg-white px-4 py-2">
+           <input type="checkbox"
+                  class="mr-4"
+                 [checked]="selection.isSelected(attendee.id)"
+                 (change)="selection.toggle(attendee.id)" />
+                 <span>{{ attendee.name }}</span>
+        </div>
+      }
+      <button (click)="selection.clear()" class="rounded bg-gray-600 text-white w-full px-4 py-2">Clear selection</button>
+    </div>
+  </div>
+</div>
